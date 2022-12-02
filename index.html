@@ -9,89 +9,72 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Work Day Scheduler</title>
-  </head>
-  <body>
-    <div class="jumbotron jumbotron-fluid head">
-      <h1 class="display-4">Day Scheduler</h1>
-      <p class="lead text-center">A simple calendar app for scheduling your work day</p>
-      <button class="btn btn-warning" style="margin-bottom:1em" id="clearBtn">Clear</button>
-    </div>
-    <div class="container main">
-        <div class='row time-block'>
-            <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                9am
-            </div>
-            <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour="9" id='div9'></textarea>
-            <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block savebtn" id="btn9"></button>
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            10am
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='10' id="div10"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn10"></button>
+</head>
 
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            11am
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour="11" id="div11"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn11"></button>
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  
+  <div class="container planner-block" id="containerPlanner">
+    <table>
+      <thead>
+        <tr>
+          <th>Timeblocks</th>
+          <th>Insert data by clicking on the specific time</th>
+          <th>Save by clicking <i class="fas fa-save fa-sm"></i></th>
+        </tr>
+      </thead>
+      <tr id="9-hour" data-time="9" class="schedule-slot">
+        <td class="cell-time">9 AM</td>
+        <td class="cell-info"><textarea id="9am-text"></textarea></td>
+        <td class="cell-save" id="9am"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="10-hour" data-time="10" class="schedule-slot">
+        <td class="cell-time">10 AM</td>
+        <td class="cell-info"><textarea id="10am-text"></textarea></td>
+        <td class="cell-save" id="10am"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="11-hour" data-time="11" class="schedule-slot">
+        <td class="cell-time">11 AM</td>
+        <td class="cell-info"><textarea id="11am-text"></textarea></td>
+        <td class="cell-save" id="11am"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="12-hour" data-time="12" class="schedule-slot">
+        <td class="cell-time">12 PM</td>
+        <td class="cell-info"><textarea id="12pm-text"></textarea></td>
+        <td class="cell-save" id="12pm"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="13-hour" data-time="13" class="schedule-slot">
+        <td class="cell-time">1 PM</td>
+        <td class="cell-info"><textarea id="13pm-text"></textarea></td>
+        <td class="cell-save" id="13pm"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="14-hour" data-time="14" class="schedule-slot">
+        <td class="cell-time">2 PM</td>
+        <td class="cell-info"><textarea id="14pm-text"></textarea></td>
+        <td class="cell-save" id="14pm"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="15-hour" data-time="15" class="schedule-slot">
+        <td class="cell-time">3 PM</td>
+        <td class="cell-info"><textarea id="15pm-text"></textarea></td>
+        <td class="cell-save" id="15pm"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="16-hour" data-time="16" class="schedule-slot">
+        <td class="cell-time">4 PM</td>
+        <td class="cell-info"><textarea id="16pm-text"></textarea></td>
+        <td class="cell-save" id="14pm"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+      <tr id="17-hour" data-time="17" class="schedule-slot">
+        <td class="cell-time">5 PM</td>
+        <td class="cell-info"><textarea id="17pm-text"></textarea></td>
+        <td class="cell-save" id="17pm"><i class="fa fa-save fa-2x"></i></td>
+      </tr>
+    </table>
 
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            12am
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour="12" id="div12"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn12"></button>
 
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            1pm
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='13' id="div1"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn1"></button>
-
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-md-2 col-lg-2">
-            2pm
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour="14" id="div2"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn2"></button>
-
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            3pm
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour="15" id="div3"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn3"></button>
-
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            4pm
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='16' id="div4"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn4"></button>
-
-    </div>
-    <div class='row time-block'>
-        <div class="hour col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            5pm
-        </div>
-        <textarea class="future col-xs-9 col-sm-9 col-md-9 col-lg-9 description" data-hour='17' id="div5"></textarea>
-        <button class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fas fa-save btn-block saveBtn" id="btn5"></button>
-
-    </div>
-
-</div>
-
-</div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

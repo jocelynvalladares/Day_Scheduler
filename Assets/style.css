@@ -4,13 +4,20 @@ body {
     line-height: 1;
   }
   
+  .container {
+    display:flex;
+    justify-content: center;
+    background-color: lavenderblush;
+  }
+
+
   textarea{
-    background: transparent;
+    background: inherit;
     border: none;
     resize: none;
     color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
+    max-width: 100%;
+    width: 100%;
   }
   
   .jumbotron {
@@ -25,9 +32,50 @@ body {
     white-space: pre-wrap;
   }
   
+  .cell-time {
+    background-color: lavenderblush;
+  }
+
+  .cell-time, .cell-save{
+    border: 3px solid pink;
+    height: 50px;
+    width: 10%
+    font-weight bolder; 
+  }
+
+  .cell-info {
+    align-items: center;
+    border: 3px solid pink;
+    height: 50px;
+    width: 80%;
+    text-align: left;
+    padding: none;
+  }
+  .planner-block table {
+    width: 100%;
+    text-align: center;
+  }
+
+  .schedule-slot {
+    width: 80%;
+  }
+
   .time-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 15px;
+  }
+
+  .cell-save {
+    border: 3px solid pink;
+    background-color: khaki;
+    cursor: pointer;
+  }
+
+  .cell-save:hover{
+    background-color: rgb(#133, #121, #124);
   }
   
   .row {
@@ -70,4 +118,13 @@ body {
     transition: all .3s ease-in-out;
   }
   
+  table {
+    border-collapse: collapse;
+  }
+
+  th {
+    height: 5rem;
+    width: 10rem;
+    text-align: center;
+  }
   
